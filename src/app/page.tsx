@@ -15,6 +15,7 @@ import Textarea from "@/ui/Textarea";
 import ContactFormSection from "@/components/ContactFormSection";
 import ContactCard from "@/components/ContactDatos";
 import TeamMemberCard from "@/components/TeamMemberCard";
+import Unirte from "@/components/Unirte";
 
 export default function Home() {
   return (
@@ -28,10 +29,13 @@ export default function Home() {
         
         <div className="grid gap-12 md:grid-cols-2">
           <TeamMemberCard />
-          <ContactCard />
+          <Unirte />
         </div>
-        
-        <ContactFormSection />
+
+        <div className="grid gap-12 md:grid-cols-2">
+          <ContactCard />
+          <ContactFormSection />
+        </div>
         
         <section className="space-y-12">
           <Tecnologias />
