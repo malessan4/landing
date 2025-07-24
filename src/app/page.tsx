@@ -7,6 +7,7 @@ import Tecnologias from "@/components/Tecnologias";
 import QueHacemosSection from "@/components/QueHacemosSection";
 import TeamMemberCard from "@/components/TeamMemberCard";
 import Unirte from "@/components/Unirte";
+import TeamMemberSection from "@/components/TeamMembersSection";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
         {/* ✅ Secciones principales */}
         <AboutSection />
         <QueHacemosSection />
-        <TeamMemberCard />
+        <TeamMemberSection />
         <Unirte />
         <Tecnologias />
         
