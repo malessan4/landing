@@ -4,6 +4,7 @@ import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import Card from '@/ui/Card';
 
 function TeamMemberCard({
+  id,
   avatar,
   name,
   role,
@@ -29,11 +30,11 @@ function TeamMemberCard({
     <div className="max-w-sm w-full font-['Roboto'] transition-all">
       <Card className={`${bgColor} border-[10px] ${borderColor} ${textColor}`}>
         <div className="flex flex-col items-center text-center">
-          <div className={`w-28 h-28 rounded-full border-[4px] ${borderColor} ${bgColor} p-1 mb-6`}>
+          <div className={`w-28 h-28 rounded-full border-[4px] ${borderColor} ${bgColor} p-1 mb-6 overflow-hidden`}>
             <img
               src={avatar}
               alt={`${name} avatar`}
-              className="w-full h-full rounded-full object-cover"
+              className="w-full h-full rounded-full object-cover object-top"
             />
           </div>
 
@@ -87,35 +88,4 @@ function TeamMemberCard({
     </div>
   );
 }
-
-export default function TeamMemberCardDemo() {
-  const [mode, setMode] = useState('dark');
-
-  const toggleMode = () => setMode((prev) => (prev === 'dark' ? 'light' : 'dark'));
-
-  return (
-    <div className={`min-h-screen flex flex-col items-center justify-center gap-6 ${mode === 'dark' ? 'bg-neutral-900' : 'bg-gray-100'} transition-all p-6`}>
-      <button
-        onClick={toggleMode}
-        className="px-4 py-2 rounded-md bg-blue-600 text-white hover:bg-blue-700 transition"
-      >
-        Cambiar a modo {mode === 'dark' ? 'claro' : 'oscuro'}
-      </button>
-
-      <TeamMemberCard
-        avatar="https://i.pravatar.cc/150?img=65"
-        name="Leo "
-        role="Fullstack Developer"
-        headline="Innovación constante"
-        description="Construyendo soluciones con pasión por la tecnología."
-        technologies={['React', 'Node.js', 'Tailwind', 'PostgreSQL']}
-        links={{
-          github: 'https://github.com/leo',
-          linkedin: 'https://linkedin.com/in/leo',
-          instagram: 'https://instagram.com/leo',
-        }}
-        mode={mode}
-      />
-    </div>
-  );
-}
+export default TeamMemberCard;
