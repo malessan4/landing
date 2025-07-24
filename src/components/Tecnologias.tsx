@@ -1,6 +1,4 @@
 "use client";
-/* import { motion } from "framer-motion";
-import React, { useState, useRef, useEffect } from "react"; */
 import {
   SiReact, SiNodedotjs, SiNextdotjs, SiTailwindcss, SiGraphql, SiKotlin,
   SiHtml5, SiDjango, SiFlask, SiOpenai, SiPostgresql, SiJavascript,
@@ -10,114 +8,165 @@ import {
 import { VscTerminalPowershell } from "react-icons/vsc";
 import { FaGlobe, FaAndroid, FaApple, FaRegClock, FaTv, FaRocket } from "react-icons/fa";
 
+const technologyCategories = [
+  {
+    icon: FaGlobe,
+    name: "Website",
+    technologies: [
+      { icon: SiReact, name: "React" },
+      { icon: SiNextdotjs, name: "Next.js" },
+      { icon: SiHtml5, name: "HTML5" },
+      { icon: SiCss3, name: "CSS3" },
+      { icon: SiJavascript, name: "JavaScript" },
+      { icon: SiTypescript, name: "TypeScript" },
+      { icon: SiTailwindcss, name: "Tailwind CSS" },
+      { icon: SiAstro, name: "Astro" },
+      { icon: SiAngular, name: "Angular" },
+      { icon: SiVuetify, name: "Vuetify" }
+    ]
+  },
+  {
+    icon: FaAndroid,
+    name: "Android",
+    technologies: [
+      { icon: SiKotlin, name: "Kotlin" },
+      { icon: SiPython, name: "Python" },
+      { icon: SiJava, name: "Java" }
+    ]
+  },
+  {
+    icon: FaApple,
+    name: "iOS",
+    technologies: [
+      { icon: SiSwift, name: "Swift" },
+      { icon: SiPython, name: "Python" }
+    ]
+  },
+  {
+    icon: FaRegClock,
+    name: "Watch",
+    technologies: [
+      { icon: SiSwift, name: "Swift" },
+      { icon: SiKotlin, name: "Kotlin" }
+    ]
+  },
+  {
+    icon: FaTv,
+    name: "TV",
+    technologies: [
+      { icon: SiAndroid, name: "Android TV" },
+      { icon: SiApple, name: "tvOS" }
+    ]
+  },
+  {
+    icon: FaRocket,
+    name: "IA",
+    technologies: [
+      { icon: SiPython, name: "Python" },
+      { icon: SiTensorflow, name: "TensorFlow" },
+      { icon: SiPytorch, name: "PyTorch" },
+      { icon: SiOpenai, name: "OpenAI" }
+    ]
+  }
+];
+
+const backendTechnologies = [
+  { icon: SiNodedotjs, name: "Node.js" },
+  { icon: SiDjango, name: "Django" },
+  { icon: SiFlask, name: "Flask" },
+  { icon: SiFastapi, name: "FastAPI" },
+  { icon: SiNestjs, name: "NestJS" },
+  { icon: SiGraphql, name: "GraphQL" }
+];
+
+const databaseTechnologies = [
+  { icon: SiPostgresql, name: "PostgreSQL" },
+  { icon: SiMongodb, name: "MongoDB" },
+  { icon: SiMysql, name: "MySQL" },
+  { icon: SiSqlite, name: "SQLite" }
+];
+
+const otherTechnologies = [
+  { icon: SiGnubash, name: "Bash" },
+  { icon: VscTerminalPowershell, name: "PowerShell" },
+  { icon: SiC, name: "C" },
+  { icon: SiCplusplus, name: "C++" }
+];
+
 export default function Tecnologias() {
-  // ✅ Convertir array de JSX a array de objetos con IDs únicos
-  const techData = [
-    { id: 'react', icon: SiReact, color: '#61DAFB', name: 'React.js' },
-    { id: 'nodejs', icon: SiNodedotjs, color: '#339933', name: 'Node.js' },
-    { id: 'nextjs', icon: SiNextdotjs, color: '#000000', name: 'Next.js' },
-    { id: 'tailwind', icon: SiTailwindcss, color: '#38BDF8', name: 'Tailwind CSS' },
-    { id: 'graphql', icon: SiGraphql, color: '#E10098', name: 'GraphQL' },
-    { id: 'kotlin', icon: SiKotlin, color: '#E10098', name: 'Kotlin' },
-    { id: 'html5', icon: SiHtml5, color: '#c3690aff', name: 'HTML' },
-    { id: 'django', icon: SiDjango, color: '#44B78B', name: 'Django' },
-    { id: 'flask', icon: SiFlask, color: '#FFFFFF', name: 'Flask' },
-    { id: 'openai', icon: SiOpenai, color: '#FFFFFF', name: 'OpenAi' },
-    { id: 'postgresql', icon: SiPostgresql, color: '#FFFFFF', name: 'PostgreQL' },
-    { id: 'javascript', icon: SiJavascript, color: '#F0DB4F', name: 'JavaScript' },
-    { id: 'vuetify', icon: SiVuetify, color: '#44B78B', name: 'Vuetify' },
-    { id: 'sqlite', icon: SiSqlite, color: '#0F80CC', name: 'SQLite' },
-    { id: 'fastapi', icon: SiFastapi, color: '#009688', name: 'FastAPI' },
-    { id: 'nestjs', icon: SiNestjs, color: '#E0234E', name: 'Nest.js' },
-    { id: 'mysql', icon: SiMysql, color: '#FFFFFF', name: 'MySQL' },
-    { id: 'astro', icon: SiAstro, color: '#FF5D01', name: 'Astro' },
-    { id: 'angular', icon: SiAngular, color: '#DC087D', name: 'Angular' },
-    { id: 'bash', icon: SiGnubash, color: '#FFFFFF', name: 'Bash' },
-    { id: 'c', icon: SiC, color: '#00599C', name: 'C' },
-    { id: 'cplusplus', icon: SiCplusplus, color: '#659AD2', name: 'C++' },
-    { id: 'python', icon: SiPython, color: '#387EB8', name: 'Python' },
-    { id: 'css3', icon: SiCss3, color: '#264DE4', name: 'CSS' },
-    { id: 'typescript', icon: SiTypescript, color: '#3178C6', name: 'TypeScript' },
-    { id: 'mongodb', icon: SiMongodb, color: '#01EC64', name: 'MongoDB' },
-    { id: 'powershell', icon: VscTerminalPowershell, color: '#FFFFFF', name: 'PowerShell' }
-  ];
-
-  // ✅ Generar elementos JSX con keys únicas
-  const items = techData.map((tech) => {
-    const IconComponent = tech.icon;
-    return (
-      <li key={tech.id} className="icon-img">
-        <IconComponent size={50} color={tech.color} style={{ verticalAlign: "middle" }} />
-        <p className="pt-2">{tech.name}</p>
-      </li>
-    );
-  });
-
   return (
-    <section className="text-inverse section-tecnologias">
-      <h2 className="text-h2 mb-8 text-center">
-        Tecnologías en las que Trabajamos
-      </h2>
+    <section className="py-16 bg-tertiary text-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold mb-12 text-center">
+          Tecnologías en las que Trabajamos
+        </h2>
 
-      <div className="div-tecnologias pt-8">
-        <ul className="">
-          <div className="cards-tecnologias">
-            <div className="li-tecnologias">
-              <FaGlobe className="icon-tecnologia" size={48} color="#fff" />
-              <span>Website</span>
-            </div>
-            <div className="li-tecnologias">
-              <FaAndroid className="icon-tecnologia" size={48} color="#fff" />
-              <span>Android</span>
-            </div>
-            <div className="li-tecnologias">
-              <FaApple className="icon-tecnologia" size={48} color="#fff" />
-              <span>IOS</span>
-            </div>
-            <div className="li-tecnologias">
-              <FaRegClock className="icon-tecnologia" size={48} color="#fff" />
-              <span>Watch</span>
-            </div>
-            <div className="li-tecnologias">
-              <FaTv className="icon-tecnologia" size={48} color="#fff" />
-              <span>Tv</span>
-            </div>
-            <div className="li-tecnologias">
-              <FaRocket className="icon-tecnologia" size={48} color="#fff" />
-              <span>IA</span>
-            </div>
-          </div>
-        </ul>
-      </div>
+        {/* Categorías principales */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-16">
+          {technologyCategories.map((category, index) => (
+            <TechnologyCard 
+              key={index}
+              icon={category.icon}
+              name={category.name}
+              technologies={category.technologies}
+            />
+          ))}
+        </div>
 
-      <div className="pt-20">
-        <div className="w-full">
-          <div className="overflow-hidden cards-tecnologias icon-container">
-            <ul className="animate-scroll">
-              {/* ✅ Primera repetición con keys únicas */}
-              {items.map((icon, i) => (
-                <div key={`first-${techData[i].id}`} className="carousel-item">
-                  {icon}
-                </div>
-              ))}
-
-              {/* ✅ Segunda repetición con keys únicas */}
-              {items.map((icon, i) => (
-                <div key={`second-${techData[i].id}`} className="carousel-item">
-                  {icon}
-                </div>
-              ))}
-
-              {/* ✅ Tercera repetición con keys únicas */}
-              {items.map((icon, i) => (
-                <div key={`third-${techData[i].id}`} className="carousel-item">
-                  {icon}
-                </div>
-              ))}
-            </ul>
-          </div>
+        {/* Tecnologías adicionales */}
+        <div className="space-y-12">
+          <TechnologySection 
+            title="Backend Technologies"
+            technologies={backendTechnologies}
+          />
+          <TechnologySection 
+            title="Database Systems"
+            technologies={databaseTechnologies}
+          />
+          <TechnologySection 
+            title="Other Technologies"
+            technologies={otherTechnologies}
+          />
         </div>
       </div>
     </section>
+  );
+}
+
+function TechnologyCard({ icon: Icon, name, technologies }) {
+  return (
+    <div className="group relative flex flex-col items-center p-6 bg-white/10 rounded-xl hover:bg-white/20 transition-all duration-300">
+      <div className="mb-4 p-3 bg-white/20 rounded-full">
+        <Icon className="text-4xl text-white" />
+      </div>
+      <h3 className="text-xl font-semibold mb-4">{name}</h3>
+      
+      <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300 flex items-center justify-center p-4">
+        <div className="grid grid-cols-2 gap-2">
+          {technologies.map((tech, i) => (
+            <div key={i} className="flex items-center space-x-2">
+              <tech.icon className="text-lg" />
+              <span className="text-sm">{tech.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function TechnologySection({ title, technologies }) {
+  return (
+    <div>
+      <h3 className="text-2xl font-semibold mb-6">{title}</h3>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        {technologies.map((tech, index) => (
+          <div key={index} className="flex items-center space-x-3 p-3 bg-white/10 rounded-lg">
+            <tech.icon className="text-2xl" />
+            <span>{tech.name}</span>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
