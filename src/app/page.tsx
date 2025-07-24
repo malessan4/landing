@@ -6,6 +6,7 @@ import Textarea from "@/ui/Textarea";
 import Tecnologias from "@/components/Tecnologias";
 import QueHacemosSection from "@/components/QueHacemosSection";
 import TeamMemberCard from "@/components/TeamMemberCard";
+import Unirte from "@/components/Unirte";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
         <AboutSection />
         <QueHacemosSection />
         <TeamMemberCard />
+        <Unirte />
         <Tecnologias />
         
         {/* ✅ Sección de pruebas de UI - mejor organizada */}
