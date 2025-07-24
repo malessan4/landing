@@ -16,14 +16,14 @@ function TeamMemberCard({
   const isDark = mode === 'dark';
 
   const bgColor = isDark ? 'bg-black' : 'bg-white';
-  const textColor = isDark ? 'text-white' : 'text-black';
-  const borderColor = isDark ? 'border-[#86A869]' : 'border-[#025159]';
-  const highlightColor = isDark ? '#86A869' : '#025159';
-  const techBg = isDark ? 'bg-[#d8e2c3] text-[#4b5734]' : 'bg-[#B6D3DC] text-[#02414a]';
-  const buttonBg = isDark ? 'bg-[#86A869] hover:bg-[#7a975c]' : 'bg-[#025159] hover:bg-[#013f49]';
-  const iconColor = isDark ? 'text-white hover:text-[#86A869]' : 'text-black hover:text-[#025159]';
-  const subtitleOpacity = isDark ? 'text-white opacity-80' : 'text-black opacity-70';
-  const descriptionOpacity = isDark ? 'text-white opacity-90' : 'text-black opacity-80';
+  const textColor = isDark ? 'text-black' : 'text-black';
+  const borderColor = isDark ? 'border-[#025159]' : 'border-[#86A869]';
+  const highlightColor = isDark ? '#025159' : '#86A869';
+  const techBg = isDark ? 'bg-[#B6D3DC] text-[#02414a]'  : 'bg-[#d8e2c3] text-[#4b5734]' ;
+  const buttonBg = isDark ? 'bg-[#025159] hover:bg-[#013f49]' : 'bg-[#86A869] hover:bg-[#7a975c]' ;
+  const iconColor = isDark ? 'text-black hover:text-[#025159]' : 'text-black hover:text-[#86A869]' ;
+  const subtitleOpacity = isDark ? 'text-black opacity-70'  : 'text-black opacity-80' ;
+  const descriptionOpacity = isDark ? 'text-black opacity-80' : 'text-black opacity-90' ;
 
   return (
     <div className="max-w-sm w-full font-['Roboto'] transition-all">
