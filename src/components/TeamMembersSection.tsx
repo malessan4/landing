@@ -7,9 +7,7 @@ interface TeamMember {
   avatar: string;
   name: string;
   role: string;
-  headline: string;
   description: string;
-  technologies: string[];
   links: {
     github?: string;
     linkedin?: string;
@@ -24,9 +22,7 @@ const teamMembers: TeamMember[] = [
     avatar: "/celi.jpg",
     name: "Celi",
     role: "FrontEnd Developer",
-    headline: "Innovación constante",
     description: "Construyendo soluciones con pasión por la tecnología.",
-    technologies: ['Python', 'HTML5', 'CSS', 'Git/Github', 'Figma', 'IA'],
     links: {
       github: 'https://github.com/leo',
       linkedin: 'https://linkedin.com/in/leo',
@@ -40,9 +36,7 @@ const teamMembers: TeamMember[] = [
     avatar: "/Daro.png",
     name: "Darío Giménez",
     role: "Full Stack Developer",
-    headline: "Diseño centrado",
     description: "Creando experiencias de usuario memorables y funcionales.",
-    technologies: ['JavaScript', 'TypeScript', 'Python', 'C', 'HTML5', 'CSS3', 'SASS', 'Tailwind CSS', 'React', 'Next.js', 'Vue.js', 'Node.js', 'Flask', 'Django', 'Django REST', 'MySQL', 'MongoDB', 'PostgreSQL', 'Git/Github', 'Figma', 'IA'],
     links: {
       github: 'https://github.com/dario',
       linkedin: 'https://linkedin.com/in/dario',
@@ -53,18 +47,46 @@ const teamMembers: TeamMember[] = [
   {
     
     id: "member-3", 
-    avatar: "https://i.pravatar.cc/150?img=45",
-    name: "Carlos",
-    role: "DevOps Engineer",
-    headline: "Infraestructura sólida",
+    avatar: "gabrielsosa.png",
+    name: "Gabriel Sosa",
+    role: "Aca va el Rol",
     description: "Automatizando procesos para despliegues eficientes y seguros.",
-    technologies: ['AWS', 'Docker', 'Kubernetes', 'CI/CD'],
     links: {
       github: 'https://github.com/carlos',
       linkedin: 'https://linkedin.com/in/carlos',
     },
     mode: "dark",
   },
+
+  {
+    
+    id: "member-4", 
+    avatar: "/matias.png",
+    name: "Matias Daniel Alessandrello",
+    role: "Full Stack Developer",
+    description: "Los detalles importan. Cada línea de código cuenta para lograr un producto excepcional.",
+    links: {
+      github: 'https://github.com/carlos',
+      linkedin: 'https://linkedin.com/in/carlos',
+    },
+    mode: "dark",
+  },
+
+    {
+    
+    id: "member-5", 
+    avatar: "/Ovejero.png",
+    name: "Agustin Ovejero",
+    role: "Aca va el Rol",
+    description: "Desarrollando soluciones innovadoras con un enfoque en la usabilidad.",
+    links: {
+      github: 'https://github.com/carlos',
+      linkedin: 'https://linkedin.com/in/carlos',
+    },
+    mode: "dark",
+  },
+
+
   // Puedes agregar más miembros según necesites
 ];
 

@@ -8,9 +8,7 @@ function TeamMemberCard({
   avatar,
   name,
   role,
-  headline,
   description,
-  technologies,
   links,
   mode = 'dark',
 }) {
@@ -39,26 +37,15 @@ function TeamMemberCard({
           </div>
 
           <h3 className={`text-2xl font-bold ${textColor}`}>{name}</h3>
-          <p className={`text-sm ${subtitleOpacity} mt-1 mb-4`}>{role}</p>
 
-          <h4 className="text-5xl font-extrabold mb-2" style={{ color: highlightColor }}>
-            {headline}
+
+          <h4 className="text-4xl font-extrabold mb-2" style={{ color: highlightColor }}>
+            {role}
           </h4>
 
-          <p className={`text-sm ${descriptionOpacity} mb-6 max-w-xs`}>{description}</p>
+          <p className={`text-2sm ${descriptionOpacity} mb-6 max-w-xs`}>{description}</p>
 
-          {technologies.length > 0 && (
-            <div className="flex flex-wrap justify-center gap-2 mb-4">
-              {technologies.map((tech) => (
-                <span
-                  key={tech}
-                  className={`text-xs font-medium px-2 py-0.5 rounded-full ${techBg}`}
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-          )}
+
 
           <div className="flex gap-4 mb-6 text-xl">
             {links.github && (
