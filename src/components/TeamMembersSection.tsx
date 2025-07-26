@@ -20,7 +20,7 @@ const teamMembers: TeamMember[] = [
   {
     id: "member-1",
     avatar: "/celi.jpg",
-    name: "Celi",
+    name: "Celina Pereyra",
     role: "FrontEnd Developer",
     description: "Construyendo soluciones con pasión por la tecnología.",
     links: {
@@ -49,8 +49,8 @@ const teamMembers: TeamMember[] = [
     id: "member-3", 
     avatar: "gabrielsosa.png",
     name: "Gabriel Sosa",
-    role: "Aca va el Rol",
-    description: "Automatizando procesos para despliegues eficientes y seguros.",
+    role: "Full Stack Developer",
+    description: "Lo que diga Daro.",
     links: {
       github: 'https://github.com/carlos',
       linkedin: 'https://linkedin.com/in/carlos',
@@ -72,7 +72,7 @@ const teamMembers: TeamMember[] = [
     mode: "dark",
   },
 
-    {
+  {
     
     id: "member-5", 
     avatar: "/Ovejero.png",
